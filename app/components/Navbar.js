@@ -1,4 +1,3 @@
-// components/Navbar.js
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,28 +7,33 @@ export default function Navbar() {
   const pathname = usePathname();
   const [activeLink, setActiveLink] = useState("");
   const [isTransparent, setIsTransparent] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
     setActiveLink(pathname);
-    // Check if we're at the home page initially
-    const isHome = pathname === "/" || pathname === "/#home";
-    setIsTransparent(isHome && isAtTop);
 
-    // Scroll event listener
-    const handleScroll = () => {
-      const atTop = window.scrollY < 800;
-      setIsAtTop(atTop);
-      setIsTransparent((pathname === "/" || pathname === "/#home") && atTop);
+    const homeSection = document.getElementById("home");
+
+    if (!homeSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsTransparent(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0.1, // triggers when 10% of #home is visible
+      }
+    );
+
+    observer.observe(homeSection);
+
+    return () => {
+      if (homeSection) observer.unobserve(homeSection);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname, isAtTop]);
+  }, [pathname]);
 
   const handleClick = (link) => {
     setActiveLink(link);
-    // When clicking any link, make navbar opaque
     setIsTransparent(false);
   };
 
