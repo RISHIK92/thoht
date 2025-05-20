@@ -67,7 +67,7 @@ export default function ProjectShowcase({
         <div className="flex justify-center items-center pb-6">
           <button
             onClick={goToPrevious}
-            className="bg-gray-600 rounded-full py-0 px-2 text-white transition-all hover:scale-110"
+            className="rounded-full py-0 px-1 text-black transition-all hover:scale-110 cursor-pointer"
             aria-label="Previous image"
           >
             <ChevronLeft size={18} />
@@ -79,7 +79,7 @@ export default function ProjectShowcase({
 
           <button
             onClick={goToNext}
-            className="bg-gray-600 rounded-full py-0 px-2 text-white transition-all hover:scale-110"
+            className="rounded-full py-0 px-1 text-black transition-all hover:scale-110 cursor-pointer"
             aria-label="Next image"
           >
             <ChevronRight size={18} />
