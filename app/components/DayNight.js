@@ -1,46 +1,134 @@
-// components/DayNightSlider.jsx
-import React, { useRef, useState } from "react";
+"use client";
 
-export default function DayNightSlider() {
+import { useRef, useState, useEffect } from "react";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
+
+export default function DayNightSlider({
+  dayImage,
+  nightImage,
+  title,
+  description,
+}) {
+  const [position, setPosition] = useState(50);
+  const sliderRef = useRef(null);
   const containerRef = useRef(null);
-  const [sliderPosition, setSliderPosition] = useState(50); // percentage
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const handleMouseMove = (e) => {
-    const bounds = containerRef.current.getBoundingClientRect();
-    const position = ((e.clientX - bounds.left) / bounds.width) * 100;
-    setSliderPosition(Math.max(0, Math.min(100, position)));
+  // Update container width on mount and resize
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  const handleMouseDown = () => {
+    setIsDragging(true);
   };
 
-  return (
-    <div
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      className="relative w-full max-w-3xl mx-auto h-[400px] overflow-hidden cursor-ew-resize select-none my-16"
-    >
-      {/* Background (Night) */}
-      <img
-        src="https://your-cloudinary-link.com/night.jpg"
-        alt="Night"
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      />
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
-      {/* Foreground (Day) */}
+  const handleMouseMove = (e) => {
+    if (!isDragging || !containerRef.current) return;
+
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const relativeX = e.clientX - containerRect.left;
+    const percentage = Math.min(
+      Math.max((relativeX / containerRect.width) * 100, 0),
+      100
+    );
+    setPosition(percentage);
+  };
+
+  // Calculate the position of the handle based on slider position
+  const handlePosition = `${position}%`;
+
+  return (
+    <div className="w-full max-w-6xl mx-auto my-16">
+      {/* Container for slider with extended line */}
       <div
-        className="absolute top-0 left-0 h-full overflow-hidden"
-        style={{ width: `${sliderPosition}%` }}
+        className="relative"
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
       >
-        <img
-          src="https://your-cloudinary-link.com/day.jpg"
-          alt="Day"
-          className="w-full h-full object-cover"
+        {/* Main slider */}
+        <ReactCompareSlider
+          ref={sliderRef}
+          position={position}
+          onPositionChange={(pos) => setPosition(pos)}
+          itemOne={<ReactCompareSliderImage src={dayImage} alt="Day" />}
+          itemTwo={<ReactCompareSliderImage src={nightImage} alt="Night" />}
+          style={{
+            height: "600px",
+            width: "100%",
+            borderRadius: "0px",
+            overflow: "hidden",
+          }}
+          handle={<CustomHandle />}
         />
+
+        <div
+          className="absolute top-0 left-0 right-0 h-6 pointer-events-none"
+          style={{ transform: "translateY(-100%)" }}
+        >
+          <div
+            className="w-[2px] h-full bg-black absolute"
+            style={{ left: handlePosition, transform: "translateX(-50%)" }}
+          ></div>
+        </div>
+
+        {/* Shorter line below image with ō character */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-8"
+          style={{
+            transform: "translateY(100%)",
+            cursor: isDragging ? "grabbing" : "grab",
+          }}
+          onMouseDown={handleMouseDown}
+        >
+          <div
+            className="relative h-full pointer-events-none"
+            style={{
+              left: handlePosition,
+              position: "absolute",
+              transform: "translateX(-50%)",
+            }}
+          >
+            <div className="w-[2px] h-3/4 bg-black mx-auto"></div>{" "}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 text-3xl font-bold w-8 h-8 flex items-center justify-center">
+              ō
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Slider line */}
-      <div
-        className="absolute top-0 h-full w-1 bg-white z-10"
-        style={{ left: `${sliderPosition}%` }}
-      ></div>
+      <div className="mt-6 text-left">
+        <h2 className="text-xl font-medium uppercase text-black mb-1">
+          {title}
+        </h2>
+        <p className="text-gray-700 font-light text-lg">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function CustomHandle() {
+  return (
+    <div className="h-full w-[2px] bg-black flex items-center justify-center">
+      {/* This is just a vertical line with no visible handle */}
     </div>
   );
 }

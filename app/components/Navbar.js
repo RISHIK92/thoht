@@ -88,7 +88,7 @@ export default function Navbar() {
                   : "https://res.cloudinary.com/df622sxkk/image/upload/v1747689465/4ad277f4cfefe84d5f8fa8b84997de52f6f8bc6c_1_uhjfms.png"
               }
               alt="ThōnT Designs Logo"
-              className="h-16 w-auto object-scale-down mt-6"
+              className="h-16 w-auto object-scale-down mt-6 ml-1.5"
             />
           </div>
 

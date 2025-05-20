@@ -7,11 +7,17 @@ import { usePathname } from "next/navigation";
 import Navbar from "./Navbar";
 import TeamMemberCard from "./AboutTeamMember";
 import AboutHead from "./AboutHead";
+import DayNightSlider from "./DayNight";
+import ProjectShowcase from "./ProjectShowcase";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
   const pathname = usePathname();
+  const demoImages = [
+    "https://res.cloudinary.com/df622sxkk/image/upload/v1747734511/Evening_02_pruupd.jpg",
+    "https://res.cloudinary.com/df622sxkk/image/upload/v1746460143/samples/coffee.jpg",
+  ];
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -126,12 +132,12 @@ export default function About() {
               </div>
             </div>
 
-            <div className="absolute bottom-0 left-0 w-full h-64 -z-10">
+            <div className="absolute bottom-0 ml-76 w-full h-64 -z-10">
               <div
-                className="w-full h-full bg-no-repeat bg-contain bg-bottom"
+                className="w-full h-[40rem] bg-no-repeat"
                 style={{
                   backgroundImage:
-                    "url('https://res.cloudinary.com/df622sxkk/image/upload/v1747683834/image_13_ppbxla.png')",
+                    "url('https://res.cloudinary.com/df622sxkk/image/upload/v1747686472/image_13_1_qdqsrf.png')",
                 }}
               ></div>
             </div>
@@ -139,6 +145,23 @@ export default function About() {
         </div>
         <TeamMemberCard teamMembers={teamMembers} />
       </div>
+      <div className="mt-48">
+        <DayNightSlider
+          dayImage="https://res.cloudinary.com/df622sxkk/image/upload/v1747734511/Evening_02_pruupd.jpg"
+          nightImage="https://res.cloudinary.com/df622sxkk/image/upload/v1746460143/samples/coffee.jpg"
+          title="Beautiful Landscape"
+          description="Experience the transformation from day to night in this stunning location."
+        />
+      </div>
+      <ProjectShowcase
+        images={demoImages}
+        title="THE MACHINES"
+        description="The Machines, a metal foundry is to find a place amidst the tropical landscape of Rajahmundry. With the location having a humid climate, and the foundry working with metals inside, the facility demands ventilation and passive cooling systems to keep the interiors as cool as possible."
+        area="4500 sq. ft."
+        type="Pre-Engineered building"
+        style="Rustic Style"
+        location="Factory in Rajahmundry"
+      />
     </>
   );
 }

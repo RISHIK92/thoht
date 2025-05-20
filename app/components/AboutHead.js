@@ -3,13 +3,13 @@
 
 export default function AboutHead() {
   return (
-    <div className="bg-white bg-opacity-60 backdrop-blur-md mt-32 relative">
-      <div className="absolute mt-52 inset-0 z-0 pointer-events-none">
+    <div className="bg-white bg-opacity-60 backdrop-blur-md mt-4 relative mb-84">
+      <div className="absolute mt-76 inset-0 z-0 pointer-events-none">
         <div
-          className="w-[550px] h-[550px] bg-no-repeat bg-contain bg-bottom bg-center mx-auto"
+          className="w-[550px] h-[600px] bg-no-repeat bg-contain bg-bottom bg-center mx-auto"
           style={{
             backgroundImage:
-              "url('https://res.cloudinary.com/df622sxkk/image/upload/v1747678428/Group_2_ikixqa.png')",
+              "url('https://res.cloudinary.com/df622sxkk/image/upload/v1747764555/png-2_1_pskshi.png')",
             backgroundPosition: "center 70%",
           }}
         ></div>
@@ -17,7 +17,7 @@ export default function AboutHead() {
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col items-center relative">
-          <div className="w-full flex justify-center mb-10 mt-36 z-20">
+          <div className="w-full flex justify-center mb-10 mt-36 z-10">
             <img
               src="https://res.cloudinary.com/df622sxkk/image/upload/v1747726683/4ad277f4cfefe84d5f8fa8b84997de52f6f8bc6c_2_1_rdh4ly.png"
               alt="ThōnT Designs Logo"
@@ -31,11 +31,11 @@ export default function AboutHead() {
           </div>
 
           <div className="w-full max-w-2xl mt-32 text-center px-4 z-20">
-            <h2 className="text-xl">
+            {/* <h2 className="text-xl">
               Here at ThohT, we aim to provide context based design solutions
               which suits your taste, your comfort and promote a healthy and
               sustainable lifestyle.
-            </h2>
+            </h2> */}
           </div>
         </div>
       </div>
