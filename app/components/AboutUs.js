@@ -132,9 +132,9 @@ export default function About() {
               </div>
             </div>
 
-            <div className="absolute bottom-0 ml-76 w-full h-64 -z-10">
+            <div className="absolute bottom-0 left-0 w-full h-64 -z-10">
               <div
-                className="w-full h-[40rem] bg-no-repeat"
+                className="w-full h-full bg-no-repeat bg-contain bg-bottom"
                 style={{
                   backgroundImage:
                     "url('https://res.cloudinary.com/df622sxkk/image/upload/v1747686472/image_13_1_qdqsrf.png')",
