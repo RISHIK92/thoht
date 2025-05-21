@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import ContactContent from "./components/Contact";
 import About from "./components/AboutUs";
 import FullPageBackground from "./components/Home";
+import ProjectSection from "./components/Project";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -82,6 +83,7 @@ export default function Contact() {
         <FullPageBackground />
         <Navbar />
         <About />
+        <ProjectSection />
         <ContactContent />
       </div>
     </div>
