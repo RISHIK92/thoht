@@ -84,7 +84,7 @@ export default function ProjectPage({
                       style={{ aspectRatio: "16/9" }}
                       onClick={() => openModal(0)}
                     >
-                      <Image
+                      <img
                         src={images.thumbnails[0].image}
                         alt={images.thumbnails[0].title}
                         fill
@@ -112,7 +112,7 @@ export default function ProjectPage({
                         style={{ aspectRatio: "16/9" }}
                         onClick={() => openModal(index + 1)}
                       >
-                        <Image
+                        <img
                           src={thumbnail.image}
                           alt={thumbnail.title}
                           fill
@@ -179,7 +179,7 @@ export default function ProjectPage({
 
       {/* Full Page Modal with Transparent Background */}
       {isModalOpen && selectedGalleryIndex !== null && (
-        <div className="fixed inset-0 z-30  bg-opacity-20 backdrop-blur-sm overflow-y-auto">
+        <div className="fixed inset-0 z-30 bg-opacity-60 backdrop-blur-lg overflow-y-auto">
           <button
             onClick={closeModal}
             className="fixed top-6 right-6 z-10 p-3 rounded-full bg-white bg-opacity-90 hover:bg-opacity-100 transition-all shadow-lg cursor-pointer"

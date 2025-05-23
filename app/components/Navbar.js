@@ -52,6 +52,7 @@ export default function Navbar() {
       (href === "#about-us" && activeLink === "/about") ||
       (href === "#home" && activeLink === "/home") ||
       (href === "#project" && activeLink === "/project");
+    href === "#/#work-with-us" && activeLink === "/work-with-us";
 
     return (
       <Link
@@ -81,8 +82,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           <nav className="hidden md:flex space-x-12 mt-6 flex-grow justify-end pr-4 ml-40">
             <NavLink href="/#home">Home</NavLink>
+            <NavLink href="/#project">Projects</NavLink>
             <NavLink href="/#about-us">About us</NavLink>
-            <NavLink href="/#project">Project</NavLink>
           </nav>
 
           <div className="relative h-20 px-10">
@@ -102,7 +103,7 @@ export default function Navbar() {
 
           <div className="flex items-center flex-grow justify-start pl-4">
             <nav className="hidden md:flex space-x-10 mt-6">
-              <NavLink href="/work-with-us">Work with us</NavLink>
+              <NavLink href="/#work-with-us">Work with us</NavLink>
               <NavLink href="/#contact-section">Contact</NavLink>
             </nav>
             <div className="relative ml-14 mt-6">

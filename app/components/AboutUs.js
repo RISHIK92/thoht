@@ -71,12 +71,12 @@ export default function About() {
 
   return (
     <>
-      <div
-        className="relative min-h-screen flex flex-col font-[Montserrat]"
-        id="about-us"
-      >
+      <div className="relative min-h-screen flex flex-col font-[Montserrat]">
         <AboutHead />
-        <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div
+          className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
+          id="about-us"
+        >
           <div
             className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain opacity-10"
             style={{
@@ -105,9 +105,9 @@ export default function About() {
           <main className="flex-grow container mx-auto px-4 py-12 mt-4 md:py-24">
             <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
               <div className="relative">
-                <div className="w-92 h-92 overflow-hidden border-4 border-gray-200 shadow-lg mx-auto">
+                <div className="w-92 h-96 overflow-hidden border-4 border-gray-200 shadow-lg mx-auto">
                   <img
-                    src="https://res.cloudinary.com/df622sxkk/image/upload/v1747683791/1fa52cf0c442f1bfb6d787e02e60f62899373647_ljgdb2.png"
+                    src="https://res.cloudinary.com/df622sxkk/image/upload/v1748038598/IMG-20250524-WA0002_tywdru.jpg"
                     alt="Ar. Harshit Srivathsava Polina"
                     className="w-full h-full object-cover filter grayscale"
                     onContextMenu={(e) => e.preventDefault()}
@@ -129,16 +129,15 @@ export default function About() {
                 </div>
 
                 <div className="mt-6 mb-16">
-                  <blockquote className="text-lg md:text-xl italic text-gray-600 py-2 tracking-wider">
-                    "Everyone throw things, but only a juggler knows how to make
-                    a play out of them... Architecture is just the jugglery of
-                    an architect, as he plays with all that is around."
+                  <blockquote className="text-xl md:text-xl italic text-gray-600 py-2 tracking-wider">
+                    "Design is not a monologue, but an everlasting conversation
+                    between soul, soil and surroundings."
                   </blockquote>
                 </div>
               </div>
             </div>
 
-            <div className="absolute bottom-0 left-0 w-full h-64 -z-10">
+            <div className="absolute bottom-12 left-0 w-full h-64 -z-10">
               <div
                 className="w-full h-full bg-no-repeat bg-contain bg-bottom"
                 style={{

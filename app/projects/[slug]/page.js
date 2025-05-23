@@ -5,28 +5,31 @@ const projectsData = {
   architecture: {
     type: "Architecture",
     dayImage:
-      "https://res.cloudinary.com/df622sxkk/image/upload/v1747734511/Evening_02_pruupd.jpg",
+      "https://res.cloudinary.com/df622sxkk/image/upload/v1748038371/West_01_final_1_gkbpvm.png",
     nightImage:
-      "https://res.cloudinary.com/df622sxkk/image/upload/v1746460143/samples/coffee.jpg",
+      "https://res.cloudinary.com/df622sxkk/image/upload/v1748038135/West_02_final_1_q3l1ma.png",
     title: "Architecture Project",
     description:
       "This is a detailed description of our architecture project...",
     images: {
       thumbnails: [
         {
-          image: "/images/arch-thumb-2.jpg",
-          title: "Modern Exterior",
+          image:
+            "https://res.cloudinary.com/df622sxkk/image/upload/v1748038753/02_isi48i.jpg",
+          title: "The Sai Baba temple",
           description:
-            "Contemporary facade design with clean lines and sustainable materials",
-          area: "2,500 sq ft",
-          type: "Residential",
-          style: "Modern",
-          location: "Downtown District",
+            "The Sai Baba temple, placed itself facing North, at the entrance of Mukkinada village. Small yet divine, the temple gracefully sits amidst the village residences, creating a positive aura in its surroundings. The architectural style chosen is very minimal for temple architecture and the colours are kept subtle to make sure the attention of the devotees is focused only on worship and prayers.",
+          area: "486 sq. ft.",
+          type: "Brick Masonry",
+          style: "Indian Temple Architecture",
           galleries: [
-            "https://res.cloudinary.com/df622sxkk/image/upload/v1747734511/Evening_02_pruupd.jpg",
-            "https://res.cloudinary.com/df622sxkk/image/upload/v1747734511/Evening_02_pruupd.jpg",
-            "/images/arch-gallery-1-3.jpg",
-            "/images/arch-gallery-1-4.jpg",
+            "https://res.cloudinary.com/df622sxkk/image/upload/v1748039039/08_boxvwn.jpg",
+            "https://res.cloudinary.com/df622sxkk/image/upload/v1748039005/01_ultuwn.jpg",
+            "https://res.cloudinary.com/df622sxkk/image/upload/v1748039095/05_1_wiuojq.jpg",
+            "https://res.cloudinary.com/df622sxkk/image/upload/v1748039240/03_jyiqiw.jpg",
+            "https://res.cloudinary.com/df622sxkk/image/upload/v1748039163/09_1_oynbot.jpg",
+            "https://res.cloudinary.com/df622sxkk/image/upload/v1748039252/07_v1bv2j.jpg",
+            "https://res.cloudinary.com/df622sxkk/image/upload/v1748039254/10_tbzk7i.jpg",
           ],
         },
         {
@@ -151,8 +154,10 @@ const projectsData = {
   },
   landscape: {
     type: "Landscape",
-    dayImage: "/images/landscape-day.jpg",
-    nightImage: "/images/landscape-night.jpg",
+    dayImage:
+      "https://res.cloudinary.com/df622sxkk/image/upload/v1748038359/East_Feature_Wall_j5u12o.jpg",
+    nightImage:
+      "https://res.cloudinary.com/df622sxkk/image/upload/v1748038148/East_Feature_Wall_Dawn_cemrdy.jpg",
     title: "Landscape Project",
     description: "This is a detailed description of our landscape project...",
     images: {

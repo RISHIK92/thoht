@@ -3,7 +3,7 @@ import React from "react";
 
 const TeamMemberCard = ({ teamMembers }) => {
   return (
-    <div className="w-full bg-white y-32 my-16 mb-32 relative">
+    <div className="w-full bg-white y-32 my-16 mb-12 relative">
       <img
         src="https://res.cloudinary.com/df622sxkk/image/upload/v1747686479/image_7_k4lygz.png"
         alt="Decorative T shape"
@@ -49,7 +49,7 @@ const TeamMemberCard = ({ teamMembers }) => {
 
               {/* Quote - improved styling */}
               <div className="text-center max-w-md px-4">
-                <blockquote className="italic text-gray-800 text-xl leading-relaxed tracking-wider">
+                <blockquote className="italic text-gray-800 text-lg leading-relaxed tracking-wider">
                   "{member.quote}"
                 </blockquote>
               </div>

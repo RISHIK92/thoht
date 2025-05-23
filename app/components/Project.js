@@ -5,9 +5,9 @@ import { useEffect } from "react";
 
 export default function ProjectSection() {
   const projectTypes = [
-    { name: "Architecture", slug: "architecture" },
-    { name: "Landscape", slug: "landscape" },
-    { name: "Interior", slug: "interior" },
+    { name: "As Architects", slug: "architecture" },
+    { name: "As Interior designers", slug: "interior" },
+    { name: "As Landscape architects", slug: "landscape" },
   ];
 
   // Staggered animation for initial load
@@ -42,9 +42,9 @@ export default function ProjectSection() {
         />
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-light mb-20 text-center tracking-tight relative overflow-hidden">
-            <span className="block transform translate-y-0 animate-fade-in-up font-[Montserrat]">
+            {/* <span className="block transform translate-y-0 animate-fade-in-up font-[Montserrat]">
               Our Projects
-            </span>
+            </span> */}
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-black/20 mt-4"></span>
           </h2>
 
@@ -56,7 +56,7 @@ export default function ProjectSection() {
                 className={`
                 project-button opacity-0
                 group relative inline-flex items-center justify-center
-                px-6 py-3
+                px-2 py-3
                 transition-all duration-700 ease-out
                 
                 before:absolute before:inset-0

@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 export default function ContactContent() {
   return (
     <div id="contact-section" className="mb-10">
-      <div className="flex-grow bg-white bg-opacity-60 backdrop-blur-md mt-20">
+      <div className="flex-grow bg-white bg-opacity-60 backdrop-blur-md mt-10">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row relative min-h-[70vh]">
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/4 top-0 bottom-0 border-l-1 mt-44 border-black h-[36rem]"></div>
@@ -16,10 +16,16 @@ export default function ContactContent() {
               </h1>
 
               <div className="mt-auto md:text-right pr-8 font-[Montserrat]">
-                <p className="text-lg mb-4">
+                <p className="text-lg mb-2">
                   T{" "}
                   <a href="tel:+919398143948" className="underline">
                     +91 93981 43948
+                  </a>
+                </p>
+                <p className="text-lg mb-4">
+                  T{" "}
+                  <a href="tel:+447774645161" className="underline">
+                    +44 77746 45161
                   </a>
                 </p>
               </div>
@@ -56,14 +62,6 @@ export default function ContactContent() {
                     className="text-3xl hover:text-gray-600"
                   >
                     <FaInstagram />
-                  </a>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-3xl hover:text-gray-600"
-                  >
-                    <FaTwitter />
                   </a>
                   <a
                     href="https://linkedin.com"

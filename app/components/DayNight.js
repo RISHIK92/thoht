@@ -55,7 +55,7 @@ export default function DayNightSlider({
   const handlePosition = `${position}%`;
 
   return (
-    <div className="w-full max-w-6xl mx-auto my-16">
+    <div className="w-full max-w-6xl mx-auto my-20">
       {/* Container for slider with extended line */}
       <div
         className="relative"
@@ -118,13 +118,6 @@ export default function DayNightSlider({
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="mt-6 text-left">
-        <h2 className="text-xl font-medium uppercase text-black mb-1">
-          {title}
-        </h2>
-        <p className="text-gray-700 font-light text-lg">{description}</p>
       </div>
     </div>
   );
