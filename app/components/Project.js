@@ -1,7 +1,8 @@
+// components/ProjectSection.js
 "use client";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function ProjectSection() {
   const projectTypes = [

@@ -32,11 +32,11 @@ export default function ProjectShowcase({
             />
           )}
 
-          <div className="absolute left-0 bottom-0 w-84 p-6 bg-white bg-opacity-90 flex items-center">
+          <div className="absolute left-0 bottom-0 w-72 pt-2 pl-4 bg-white bg-opacity-90 flex items-center">
             <p className="text-gray-700 text-sm">{description}</p>
           </div>
 
-          <div className="absolute right-0 bottom-0 top-0 w-80 bg-white bg-opacity-90 flex flex-col justify-end">
+          <div className="absolute right-0 bottom-0 top-0 w-60 bg-white bg-opacity-90 flex flex-col justify-end">
             {area && (
               <p className="text-gray-800 text-sm">
                 <span className="font-semibold">Area - </span> {area}
@@ -60,7 +60,7 @@ export default function ProjectShowcase({
         <h2 className="text-lg font-normal text-gray-900 uppercase tracking-wider">
           {title}
         </h2>
-        <p className="text-gray-500 text-md">{location}</p>
+        <p className="text-gray-500 text-lg">{location}</p>
       </div>
 
       {images.length > 1 && (
