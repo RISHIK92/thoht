@@ -39,17 +39,17 @@ const TeamMemberCard = ({ teamMembers }) => {
               </div>
 
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold tracking-wide mb-2">
+                <h3 className="text-2xl font-semibold tracking-wide font-[Montserrat] mb-2">
                   {member.name}
                 </h3>
-                <p className="text-gray-600 font-medium">
+                <p className="text-gray-600 font-medium font-[Montserrat] tracking-wider">
                   {member.credentials}
                 </p>
               </div>
 
               {/* Quote - improved styling */}
               <div className="text-center max-w-md px-4">
-                <blockquote className="italic text-gray-800 text-lg leading-relaxed">
+                <blockquote className="italic text-gray-800 text-xl leading-relaxed tracking-wider">
                   "{member.quote}"
                 </blockquote>
               </div>

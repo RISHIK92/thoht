@@ -71,7 +71,10 @@ export default function About() {
 
   return (
     <>
-      <div className="relative min-h-screen flex flex-col" id="about-us">
+      <div
+        className="relative min-h-screen flex flex-col font-[Montserrat]"
+        id="about-us"
+      >
         <AboutHead />
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
           <div
@@ -116,17 +119,17 @@ export default function About() {
 
               {/* Content */}
               <div className="mt-2 space-y-4">
-                <h1 className="text-xl md:text-xl font-medium text-gray-900">
+                <h1 className="text-2xl md:text-2xl font-medium text-gray-900 font-[Montserrat]">
                   Ar. Harshit Srivathsava Polina
                 </h1>
 
                 <div className="uppercase text-gray-800">
-                  <p className="text-md font-medium">PRINCIPAL ARCHITECT</p>
+                  <p className="text-md font-normal">PRINCIPAL ARCHITECT</p>
                   <p className="text-xs font-normal">B.Arch (Gold Medalist)</p>
                 </div>
 
                 <div className="mt-6 mb-16">
-                  <blockquote className="text-lg md:text-xl italic text-gray-600 py-2">
+                  <blockquote className="text-lg md:text-xl italic text-gray-600 py-2 tracking-wider">
                     "Everyone throw things, but only a juggler knows how to make
                     a play out of them... Architecture is just the jugglery of
                     an architect, as he plays with all that is around."

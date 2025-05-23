@@ -77,7 +77,7 @@ export default function Navbar() {
           : "border-b border-gray-200 bg-white bg-opacity-80 backdrop-blur-md"
       } z-20 transition-all duration-300`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 font-[Montserrat] font-medium">
         <div className="flex justify-between items-center">
           <nav className="hidden md:flex space-x-12 mt-6 flex-grow justify-end pr-4 ml-40">
             <NavLink href="/#home">Home</NavLink>

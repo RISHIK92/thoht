@@ -28,9 +28,9 @@ export default function AboutHead() {
             />
           </div>
 
-          <div className="w-full text-center text-lg z-20">
+          <div className="w-full text-center text-lg mt-1 z-20 font-[Montserrat] tracking-wide -skew-x-8">
             <h2>An Old World</h2>
-            <p>Our Thought - A new World</p>
+            <p className="tracking-wide">Our Thought - A new World</p>
           </div>
 
           <div className="w-full max-w-2xl mt-32 text-center px-4 z-20">

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@fontsource/montserrat";
 
 @layer utilities {
   .animate-gradient-x {
