@@ -107,6 +107,9 @@ export default function About() {
                     src="https://res.cloudinary.com/df622sxkk/image/upload/v1747683791/1fa52cf0c442f1bfb6d787e02e60f62899373647_ljgdb2.png"
                     alt="Ar. Harshit Srivathsava Polina"
                     className="w-full h-full object-cover filter grayscale"
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable={false}
+                    style={{ userSelect: "none", pointerEvents: "none" }}
                   />
                 </div>
               </div>

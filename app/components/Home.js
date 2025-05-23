@@ -15,6 +15,9 @@ export default function FullPageBackground() {
         <img
           src="https://res.cloudinary.com/df622sxkk/image/upload/v1747734511/Evening_02_pruupd.jpg"
           className="w-full h-full object-cover"
+          onContextMenu={(e) => e.preventDefault()}
+          draggable={false}
+          style={{ userSelect: "none", pointerEvents: "none" }}
         />
       </div>
     </div>

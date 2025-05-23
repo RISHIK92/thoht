@@ -94,6 +94,9 @@ export default function Navbar() {
               }
               alt="ThōnT Designs Logo"
               className="h-16 w-auto object-scale-down mt-4 ml-1.5"
+              onContextMenu={(e) => e.preventDefault()}
+              draggable={false}
+              style={{ userSelect: "none", pointerEvents: "none" }}
             />
           </div>
 

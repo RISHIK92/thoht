@@ -29,6 +29,9 @@ export default function ProjectShowcase({
               src={images[currentImageIndex] || "/api/placeholder/1800/700"}
               alt={`Project image ${currentImageIndex + 1}`}
               className="w-full h-full object-contain"
+              onContextMenu={(e) => e.preventDefault()}
+              draggable={false}
+              style={{ userSelect: "none", pointerEvents: "none" }}
             />
           )}
 

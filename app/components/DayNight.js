@@ -77,8 +77,12 @@ export default function DayNightSlider({
             borderRadius: "0px",
             overflow: "hidden",
             zIndex: 30,
+            userSelect: "none",
+            pointerEvents: "none",
           }}
           handle={<CustomHandle />}
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
         />
 
         <div

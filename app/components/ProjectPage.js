@@ -89,6 +89,9 @@ export default function ProjectPage({
                         alt={images.thumbnails[0].title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        onContextMenu={(e) => e.preventDefault()}
+                        draggable={false}
+                        style={{ userSelect: "none", pointerEvents: "none" }}
                       />
                       <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                         <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -114,6 +117,9 @@ export default function ProjectPage({
                           alt={thumbnail.title}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          onContextMenu={(e) => e.preventDefault()}
+                          draggable={false}
+                          style={{ userSelect: "none", pointerEvents: "none" }}
                         />
                         <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                           <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -141,6 +147,9 @@ export default function ProjectPage({
                         alt={thumbnail.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        onContextMenu={(e) => e.preventDefault()}
+                        draggable={false}
+                        style={{ userSelect: "none", pointerEvents: "none" }}
                       />
                       <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                         <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">

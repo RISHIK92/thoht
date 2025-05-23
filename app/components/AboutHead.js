@@ -22,6 +22,9 @@ export default function AboutHead() {
               src="https://res.cloudinary.com/df622sxkk/image/upload/v1747726683/4ad277f4cfefe84d5f8fa8b84997de52f6f8bc6c_2_1_rdh4ly.png"
               alt="ThōnT Designs Logo"
               className="h-24 w-auto object-scale-down"
+              onContextMenu={(e) => e.preventDefault()}
+              draggable={false}
+              style={{ userSelect: "none", pointerEvents: "none" }}
             />
           </div>
 

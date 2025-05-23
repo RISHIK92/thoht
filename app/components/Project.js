@@ -27,12 +27,18 @@ export default function ProjectSection() {
           src="https://res.cloudinary.com/df622sxkk/image/upload/v1748019185/image_8_b5ei7y.png"
           alt="Decorative T shape"
           className="absolute left-0 w-[12rem] h-96 z-10"
+          onContextMenu={(e) => e.preventDefault()}
+          draggable={false}
+          style={{ userSelect: "none", pointerEvents: "none" }}
         />
 
         <img
           src="https://res.cloudinary.com/df622sxkk/image/upload/v1748019182/image_7_1_pdnvsx.png"
           alt="Decorative T shape"
           className="absolute right-0 w-[12rem] h-96 z-10"
+          onContextMenu={(e) => e.preventDefault()}
+          draggable={false}
+          style={{ userSelect: "none", pointerEvents: "none" }}
         />
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-light mb-20 text-center tracking-tight relative overflow-hidden">
