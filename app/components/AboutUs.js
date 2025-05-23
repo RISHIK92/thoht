@@ -145,23 +145,6 @@ export default function About() {
         </div>
         <TeamMemberCard teamMembers={teamMembers} />
       </div>
-      <div className="mt-48">
-        <DayNightSlider
-          dayImage="https://res.cloudinary.com/df622sxkk/image/upload/v1747734511/Evening_02_pruupd.jpg"
-          nightImage="https://res.cloudinary.com/df622sxkk/image/upload/v1746460143/samples/coffee.jpg"
-          title="Beautiful Landscape"
-          description="Experience the transformation from day to night in this stunning location."
-        />
-      </div>
-      <ProjectShowcase
-        images={demoImages}
-        title="THE MACHINES"
-        description="The Machines, a metal foundry is to find a place amidst the tropical landscape of Rajahmundry. With the location having a humid climate, and the foundry working with metals inside, the facility demands ventilation and passive cooling systems to keep the interiors as cool as possible."
-        area="4500 sq. ft."
-        type="Pre-Engineered building"
-        style="Rustic Style"
-        location="Factory in Rajahmundry"
-      />
     </>
   );
 }

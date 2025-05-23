@@ -76,6 +76,7 @@ export default function DayNightSlider({
             width: "100%",
             borderRadius: "0px",
             overflow: "hidden",
+            zIndex: 30,
           }}
           handle={<CustomHandle />}
         />

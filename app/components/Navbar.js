@@ -50,7 +50,8 @@ export default function Navbar() {
       activeLink === href ||
       (href === "#contact-section" && activeLink === "/contact") ||
       (href === "#about-us" && activeLink === "/about") ||
-      (href === "#home" && activeLink === "/home");
+      (href === "#home" && activeLink === "/home") ||
+      (href === "#project" && activeLink === "/project");
 
     return (
       <Link
@@ -74,14 +75,14 @@ export default function Navbar() {
         isTransparent
           ? "bg-transparent backdrop-blur-none border-none"
           : "border-b border-gray-200 bg-white bg-opacity-80 backdrop-blur-md"
-      } z-50 transition-all duration-300`}
+      } z-20 transition-all duration-300`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <nav className="hidden md:flex space-x-12 mt-6 flex-grow justify-end pr-4 ml-40">
             <NavLink href="/#home">Home</NavLink>
             <NavLink href="/#about-us">About us</NavLink>
-            <NavLink href="/project">Project</NavLink>
+            <NavLink href="/#project">Project</NavLink>
           </nav>
 
           <div className="relative h-20 px-10">

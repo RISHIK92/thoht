@@ -3,7 +3,7 @@ import React from "react";
 
 const TeamMemberCard = ({ teamMembers }) => {
   return (
-    <div className="w-full bg-white y-32 my-16 relative">
+    <div className="w-full bg-white y-32 my-16 mb-32 relative">
       <img
         src="https://res.cloudinary.com/df622sxkk/image/upload/v1747686479/image_7_k4lygz.png"
         alt="Decorative T shape"

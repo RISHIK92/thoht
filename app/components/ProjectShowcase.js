@@ -21,7 +21,7 @@ export default function ProjectShowcase({
   };
 
   return (
-    <div className="w-full max-w-[1800px] mx-auto bg-white rounded-lg overflow-hidden shadow-xl">
+    <div className="w-full max-w-[1800px] mx-auto bg-white rounded-lg overflow-hidden shadow-xl z-30">
       <div className="relative">
         <div className="w-full h-[35rem] relative">
           {images.length > 0 && (
@@ -56,7 +56,7 @@ export default function ProjectShowcase({
         </div>
       </div>
 
-      <div className="px-84 pt-2 pb-6 flex justify-between items-center">
+      <div className="px-84 pt-2 pb-6 flex justify-between items-center z-30">
         <h2 className="text-lg font-normal text-gray-900 uppercase tracking-wider">
           {title}
         </h2>
@@ -64,7 +64,7 @@ export default function ProjectShowcase({
       </div>
 
       {images.length > 1 && (
-        <div className="flex justify-center items-center pb-6">
+        <div className="flex justify-center items-center pb-6 z-30">
           <button
             onClick={goToPrevious}
             className="rounded-full py-0 px-1 text-black transition-all hover:scale-110 cursor-pointer"
