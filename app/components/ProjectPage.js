@@ -87,7 +87,7 @@ export default function ProjectPage({
                       <img
                         src={images.thumbnails[0].image}
                         alt={images.thumbnails[0].title}
-                        fill
+                        fill="true"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         onContextMenu={(e) => e.preventDefault()}
                         draggable={false}
@@ -115,7 +115,7 @@ export default function ProjectPage({
                         <img
                           src={thumbnail.image}
                           alt={thumbnail.title}
-                          fill
+                          fill="true"
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
                           onContextMenu={(e) => e.preventDefault()}
                           draggable={false}
@@ -142,10 +142,10 @@ export default function ProjectPage({
                       style={{ aspectRatio: "16/9" }}
                       onClick={() => openModal(index + 5)}
                     >
-                      <Image
+                      <img
                         src={thumbnail.image}
                         alt={thumbnail.title}
-                        fill
+                        fill="true"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         onContextMenu={(e) => e.preventDefault()}
                         draggable={false}
