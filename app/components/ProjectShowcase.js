@@ -77,7 +77,9 @@ export default function ProjectShowcase({
           </button>
 
           <div className="bg-opacity-50 px-1.5 rounded-full text-gray-700 text-base font-medium">
-            0{currentImageIndex + 1}/0{images.length}
+            {currentImageIndex < 9 && "0"}
+            {currentImageIndex + 1}/{images.length < 10 && "0"}
+            {images.length}
           </div>
 
           <button
