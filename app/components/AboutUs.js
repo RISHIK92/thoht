@@ -126,7 +126,9 @@ export default function About() {
                 <div className="uppercase text-gray-800">
                   <p className="text-md font-normal">PRINCIPAL ARCHITECT</p>
                   <p className="text-xs font-normal">B.Arch (Gold Medalist)</p>
-                  <p className="text-xs font-normal"></p>
+                  <p className="text-xs font-normal">
+                    MLA, University of Edinburgh
+                  </p>
                 </div>
 
                 <div className="mt-6 mb-16">
@@ -138,7 +140,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="absolute bottom-12 left-0 w-full h-64 -z-10">
+            <div className="absolute bottom-15 left-0 w-full h-64 -z-10">
               <div
                 className="w-full h-full bg-no-repeat bg-contain bg-bottom"
                 style={{
