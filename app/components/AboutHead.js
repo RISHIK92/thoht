@@ -73,52 +73,18 @@ export default function AboutHead() {
                     <button
                       onClick={() => handleNavigation(service.route)}
                       className={`
-                        project-button opacity-100
                         group relative inline-flex items-center justify-center
                         px-4 py-3 w-full
-                        transition-all duration-700 ease-out
+                        transition-all duration-300 ease-out
                         cursor-pointer
-                        
-                        before:absolute before:inset-0
-                        before:border before:border-white/[0.3] before:opacity-100
-                        before:bg-gradient-to-b before:from-white/[0.08] before:to-transparent
-                        before:transition-all before:duration-300
-                        before:shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]
-                        hover:before:from-white/[0.12] hover:before:to-white/[0.03]
-                        hover:before:border-white/[0.4]
-
-                        after:absolute after:inset-0
-                        after:bg-gradient-to-br after:from-white/[0.04] after:via-transparent after:to-black/[0.02]
-                        after:opacity-100 after:transition-all after:duration-300
-                        hover:after:from-white/[0.06] hover:after:to-black/[0.03]
-
-                        shadow-[0_1px_3px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.15)]
-                        hover:shadow-[0_4px_12px_-2px_rgba(255,255,255,0.2),inset_0_1px_0_rgba(255,255,255,0.25)]
-
-                        overflow-hidden backdrop-blur-[1px]
                       `}
-                      style={{
-                        background:
-                          "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 50%, rgba(0,0,0,0.01) 100%)",
-                        transition: "all 0.6s cubic-bezier(0.23, 1, 0.32, 1)",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background =
-                          "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 50%, rgba(0,0,0,0.02) 100%)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background =
-                          "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 50%, rgba(0,0,0,0.01) 100%)";
-                      }}
                     >
-                      {/* Ultra-subtle shine effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent opacity-100 group-hover:opacity-100 transition-opacity duration-1000"></div>
-
                       {/* Main text */}
                       <span
                         className="
-                          text-lg md:text-xl font-normal text-black/90
-                          transition-all duration-500 ease-out
+                          text-lg md:text-xl font-medium text-black/70
+                          transition-all duration-300 ease-out
+                          group-hover:text-black/90
                           group-hover:translate-x-1
                           relative z-10 font-[Montserrat] text-center
                         "
@@ -126,39 +92,34 @@ export default function AboutHead() {
                         {service.title}
                       </span>
 
-                      {/* Arrow container with animations */}
+                      {/* Arrow container */}
                       <span
                         className="
                           ml-2 relative z-10
                           inline-flex items-center justify-center
                           w-6 h-6
-                          overflow-hidden
-                          transition-all duration-500 ease-out
+                          transition-all duration-300 ease-out
                           group-hover:ml-4
-                          before:absolute before:inset-0
-                          before:bg-gradient-to-br before:from-white/[0.06] before:to-black/[0.02]
-                          before:scale-0 group-hover:before:scale-100
-                          before:transition-transform before:duration-300
                         "
                       >
                         <ArrowUpRight
                           size={16}
                           className="
-                            relative z-10 
-                            transition-all duration-500 
+                            transition-all duration-300 
                             group-hover:scale-110 
-                            opacity-50 group-hover:opacity-100
+                            opacity-40 group-hover:opacity-70
+                            text-black
                           "
                         />
                       </span>
 
-                      {/* Animated border line */}
+                      {/* Simple underline that appears on hover */}
                       <div
                         className="
-                          absolute bottom-0 left-0 right-0 mx-auto
-                          h-[1px] w-0 group-hover:w-[calc(100%-24px)]
-                          bg-gradient-to-r from-transparent via-black/30 to-transparent
-                          transition-all duration-700 ease-out
+                          absolute bottom-2 left-4 right-4
+                          h-[1px] w-0 group-hover:w-[calc(100%-32px)]
+                          bg-black/20
+                          transition-all duration-500 ease-out
                         "
                       />
                     </button>
