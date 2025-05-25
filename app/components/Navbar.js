@@ -94,7 +94,7 @@ export default function Navbar() {
                   : "https://res.cloudinary.com/df622sxkk/image/upload/v1747689465/4ad277f4cfefe84d5f8fa8b84997de52f6f8bc6c_1_uhjfms.png"
               }
               alt="ThōnT Designs Logo"
-              className="h-16 w-auto object-scale-down mt-4 ml-1.5"
+              className="h-16 w-auto object-scale-down mt-4 ml-4"
               onContextMenu={(e) => e.preventDefault()}
               draggable={false}
               style={{ userSelect: "none", pointerEvents: "none" }}
@@ -104,9 +104,9 @@ export default function Navbar() {
           <div className="flex items-center flex-grow justify-start pl-4">
             <nav className="hidden md:flex space-x-10 mt-6">
               <NavLink href="/#work-with-us">Work with us</NavLink>
-              <NavLink href="/#contact-section">Contact</NavLink>
+              <NavLink href="/#contact-section">Contact us</NavLink>
             </nav>
-            <div className="relative ml-14 mt-6">
+            <div className="relative ml-10 mt-4">
               <input
                 type="text"
                 className={`pl-2 pr-8 py-1 border ${

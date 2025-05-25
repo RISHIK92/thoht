@@ -48,11 +48,15 @@ export default function WorkWithUs() {
                   <ul className="space-y-3 text-base">
                     <li className="flex items-start">
                       <span className="text-blue-600 mr-2 mt-1">•</span>
-                      <span>Passionate designers and developers</span>
+                      <span>Passionate designers and freelancers</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-blue-600 mr-2 mt-1">•</span>
-                      <span>Strong portfolio showcasing creativity</span>
+                      <span>
+                        Strong portfolio showcasing your design skills,
+                        creativity and expertise in generating drawings and
+                        visuals
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-blue-600 mr-2 mt-1">•</span>
@@ -61,6 +65,10 @@ export default function WorkWithUs() {
                     <li className="flex items-start">
                       <span className="text-blue-600 mr-2 mt-1">•</span>
                       <span>Dedication to quality and attention to detail</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2 mt-1">•</span>
+                      <span>Work type - Hybrid</span>
                     </li>
                   </ul>
                 </div>
