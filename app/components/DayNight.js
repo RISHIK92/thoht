@@ -13,62 +13,44 @@ export default function DayNightSlider({
   description,
 }) {
   const [position, setPosition] = useState(50);
-  const sliderRef = useRef(null);
   const containerRef = useRef(null);
-  const [containerWidth, setContainerWidth] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
-  // Update container width on mount and resize
+  const handlePosition = `${position}%`;
+
   useEffect(() => {
-    const updateWidth = () => {
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
-      }
+    const handleMouseMove = (e) => {
+      if (!isDragging || !containerRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const relativeX = e.clientX - rect.left;
+      const newPosition = Math.min(
+        Math.max((relativeX / rect.width) * 100, 0),
+        100
+      );
+      setPosition(newPosition);
     };
 
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, []);
+    const stopDragging = () => setIsDragging(false);
 
-  const handleMouseDown = () => {
-    setIsDragging(true);
-  };
+    if (isDragging) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", stopDragging);
+    }
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging || !containerRef.current) return;
-
-    const containerRect = containerRef.current.getBoundingClientRect();
-    const relativeX = e.clientX - containerRect.left;
-    const percentage = Math.min(
-      Math.max((relativeX / containerRect.width) * 100, 0),
-      100
-    );
-    setPosition(percentage);
-  };
-
-  // Calculate the position of the handle based on slider position
-  const handlePosition = `${position}%`;
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", stopDragging);
+    };
+  }, [isDragging]);
 
   return (
     <div className="w-full max-w-6xl mx-auto my-20">
-      {/* Container for slider with extended line */}
-      <div
-        className="relative"
-        ref={containerRef}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-      >
-        {/* Main slider */}
+      <div className="relative" ref={containerRef}>
+        {/* Slider */}
         <ReactCompareSlider
-          ref={sliderRef}
           position={position}
-          onPositionChange={(pos) => setPosition(pos)}
+          onPositionChange={setPosition}
           itemOne={<ReactCompareSliderImage src={dayImage} alt="Day" />}
           itemTwo={<ReactCompareSliderImage src={nightImage} alt="Night" />}
           style={{
@@ -77,14 +59,13 @@ export default function DayNightSlider({
             borderRadius: "0px",
             overflow: "hidden",
             zIndex: 30,
-            userSelect: "none",
-            pointerEvents: "none",
+            pointerEvents: "none", // Prevent interference with custom handle
           }}
-          handle={<CustomHandle />}
+          handle={<InvisibleHandle />}
           draggable={false}
-          onContextMenu={(e) => e.preventDefault()}
         />
 
+        {/* Top vertical line */}
         <div
           className="absolute top-0 left-0 right-0 h-6 pointer-events-none"
           style={{ transform: "translateY(-100%)" }}
@@ -92,28 +73,25 @@ export default function DayNightSlider({
           <div
             className="w-[2px] h-full bg-black absolute"
             style={{ left: handlePosition, transform: "translateX(-50%)" }}
-          ></div>
+          />
         </div>
 
-        {/* Shorter line below image with ō character */}
+        {/* Bottom handle and line */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-8"
-          style={{
-            transform: "translateY(100%)",
-            cursor: isDragging ? "grabbing" : "grab",
-          }}
-          onMouseDown={handleMouseDown}
+          className="absolute bottom-0 left-0 right-0 h-12"
+          style={{ transform: "translateY(100%)" }}
         >
           <div
-            className="relative h-full pointer-events-none"
+            className="absolute"
             style={{
               left: handlePosition,
-              position: "absolute",
               transform: "translateX(-50%)",
+              cursor: isDragging ? "grabbing" : "grab",
             }}
+            onMouseDown={() => setIsDragging(true)}
           >
-            <div className="w-[2px] h-3/4 bg-black mx-auto"></div>{" "}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 text-3xl font-bold w-8 h-8 flex items-center justify-center">
+            <div className="w-[2px] h-3/4 bg-black mx-auto" />
+            <div className="text-3xl font-bold w-8 h-8 flex items-center justify-center select-none">
               ō
             </div>
           </div>
@@ -123,10 +101,7 @@ export default function DayNightSlider({
   );
 }
 
-function CustomHandle() {
-  return (
-    <div className="h-full w-[2px] bg-black flex items-center justify-center">
-      {/* This is just a vertical line with no visible handle */}
-    </div>
-  );
+// Invisible handle to suppress the default UI but keep drag logic
+function InvisibleHandle() {
+  return <div className="h-full w-[2px] bg-black pointer-events-none" />;
 }

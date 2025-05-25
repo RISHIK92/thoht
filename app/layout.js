@@ -18,7 +18,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "ThōhT",
+  title: "Thoht",
+  description:
+    "We plan and design your spaces by prioritizing comfort and efficiency as our key parameters.",
 };
 
 export default function RootLayout({ children }) {

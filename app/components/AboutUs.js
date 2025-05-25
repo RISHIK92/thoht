@@ -123,12 +123,14 @@ export default function About() {
                   Ar. Harshit Srivathsava Polina
                 </h1>
 
-                <div className="uppercase text-gray-800">
-                  <p className="text-md font-normal">PRINCIPAL ARCHITECT</p>
-                  <p className="text-xs font-normal">B.Arch (Gold Medalist)</p>
+                <div className="text-gray-800">
+                  <p className="text-md font-normal uppercase">
+                    PRINCIPAL ARCHITECT
+                  </p>
                   <p className="text-xs font-normal">
                     MLA, University of Edinburgh
                   </p>
+                  <p className="text-xs font-normal">B.Arch, (Gold Medalist)</p>
                 </div>
 
                 <div className="mt-6 mb-16">
