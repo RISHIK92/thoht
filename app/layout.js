@@ -18,7 +18,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Thoht",
+  title: "ThōhT",
 };
 
 export default function RootLayout({ children }) {

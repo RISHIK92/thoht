@@ -126,6 +126,7 @@ export default function About() {
                 <div className="uppercase text-gray-800">
                   <p className="text-md font-normal">PRINCIPAL ARCHITECT</p>
                   <p className="text-xs font-normal">B.Arch (Gold Medalist)</p>
+                  <p className="text-xs font-normal"></p>
                 </div>
 
                 <div className="mt-6 mb-16">
