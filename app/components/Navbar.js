@@ -31,7 +31,6 @@ export default function Navbar() {
       if (homeSection) observer.unobserve(homeSection);
     };
   }, [pathname]);
-
   const handleClick = (link) => {
     setActiveLink(link);
     setIsTransparent(false);

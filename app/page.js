@@ -63,7 +63,7 @@ export default function Contact() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
                 <p className="text-sm text-gray-700">
-                  © {currentYear} ThōnT Designs. All Rights Reserved.
+                  © {currentYear} ThōhT Designs. All Rights Reserved.
                 </p>
               </div>
 
@@ -77,7 +77,7 @@ export default function Contact() {
 
       <div className={`${inter.className} relative z-10`}>
         <Head>
-          <title>Contact Us | ThōnT Designs</title>
+          <title>Contact Us | ThōhT Designs</title>
           <meta name="description" content="Get in touch with ThōnT Designs" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
