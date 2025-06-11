@@ -1,30 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { Menu, X, Search, ChevronRight } from "lucide-react";
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Menu, X, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [activeLink, setActiveLink] = useState("");
   const [isTransparent, setIsTransparent] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    setActiveLink(pathname);
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       setIsScrolled(scrollTop > 20);
-
-      // Check if we're at the top for transparency
-      const homeSection = document.getElementById("home");
-      if (homeSection) {
-        const rect = homeSection.getBoundingClientRect();
-        setIsTransparent(rect.top >= -100 && rect.bottom >= 100);
-      }
     };
 
+    const homeSection = document.getElementById("home");
+
+    if (!homeSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsTransparent(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0.1, // triggers when 10% of #home is visible
+      }
+    );
+
+    observer.observe(homeSection);
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Call once to set initial state
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => {
+      if (homeSection) observer.unobserve(homeSection);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -40,26 +57,21 @@ export default function Navbar() {
 
   const handleClick = (link) => {
     setActiveLink(link);
+    setIsTransparent(false);
     setIsMenuOpen(false);
-
-    // Smooth scroll to section
-    const element = document.querySelector(link);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   const navItems = [
-    { href: "#home", label: "Home", description: "Welcome to our world" },
-    { href: "#project", label: "Projects", description: "Our creative works" },
-    { href: "#about-us", label: "About", description: "Our story & team" },
+    { href: "/#home", label: "Home", description: "Welcome to our world" },
+    { href: "/#project", label: "Projects", description: "Our creative works" },
+    { href: "/#about-us", label: "About", description: "Our story & team" },
     {
-      href: "#work-with-us",
+      href: "/#work-with-us",
       label: "Work with us",
       description: "What we offer",
     },
     {
-      href: "#contact-section",
+      href: "/#contact-section",
       label: "Contact",
       description: "Let's connect",
     },
@@ -76,14 +88,15 @@ export default function Navbar() {
   const NavLink = ({ href, children }) => {
     const isActive =
       activeLink === href ||
-      (href === "#contact-section" && activeLink === "/contact") ||
-      (href === "#about-us" && activeLink === "/about") ||
-      (href === "#home" && activeLink === "/home") ||
-      (href === "#project" && activeLink === "/project") ||
-      (href === "#work-with-us" && activeLink === "/work-with-us");
+      (href === "/#contact-section" && activeLink === "/contact") ||
+      (href === "/#about-us" && activeLink === "/about") ||
+      (href === "/#home" && activeLink === "/home") ||
+      (href === "/#project" && activeLink === "/project") ||
+      (href === "/#work-with-us" && activeLink === "/work-with-us");
 
     return (
-      <button
+      <Link
+        href={href}
         onClick={() => handleClick(href)}
         className={`relative pb-1 px-1 transition-colors duration-300 ${
           isTransparent
@@ -93,7 +106,35 @@ export default function Navbar() {
       >
         {children}
         <Underline isActive={isActive} />
-      </button>
+      </Link>
+    );
+  };
+
+  const MobileNavLink = ({ href, label, description }) => {
+    const isActive =
+      activeLink === href ||
+      (href === "/#contact-section" && activeLink === "/contact") ||
+      (href === "/#about-us" && activeLink === "/about") ||
+      (href === "/#home" && activeLink === "/home") ||
+      (href === "/#project" && activeLink === "/project") ||
+      (href === "/#work-with-us" && activeLink === "/work-with-us");
+
+    return (
+      <Link
+        href={href}
+        onClick={() => handleClick(href)}
+        className={`w-full group flex items-center justify-between p-4 rounded-xl text-left transition-all duration-300 hover:bg-gray-100 hover:shadow-md transform hover:scale-[1.02] ${
+          isActive ? "bg-gray-100 shadow-md" : ""
+        }`}
+      >
+        <div>
+          <div className="font-semibold text-gray-800 group-hover:text-gray-600 transition-colors duration-200">
+            {label}
+          </div>
+          <div className="text-sm text-gray-500 mt-1">{description}</div>
+        </div>
+        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-200" />
+      </Link>
     );
   };
 
@@ -103,7 +144,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isTransparent
-            ? "bg-transparent"
+            ? "bg-transparent backdrop-blur-none border-none"
             : "bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200"
         }`}
       >
@@ -112,9 +153,9 @@ export default function Navbar() {
           <div className="hidden lg:flex justify-between items-center">
             {/* Left Navigation */}
             <nav className="flex space-x-12 mt-6 flex-grow justify-end pr-4 ml-40">
-              <NavLink href="#home">Home</NavLink>
-              <NavLink href="#project">Projects</NavLink>
-              <NavLink href="#about-us">About us</NavLink>
+              <NavLink href="/#home">Home</NavLink>
+              <NavLink href="/#project">Projects</NavLink>
+              <NavLink href="/#about-us">About us</NavLink>
             </nav>
 
             {/* Logo - Center */}
@@ -136,8 +177,8 @@ export default function Navbar() {
             {/* Right Navigation & Search */}
             <div className="flex items-center flex-grow justify-start pl-4">
               <nav className="flex space-x-10 mt-6">
-                <NavLink href="#work-with-us">Work with us</NavLink>
-                <NavLink href="#contact-section">Contact us</NavLink>
+                <NavLink href="/#work-with-us">Work with us</NavLink>
+                <NavLink href="/#contact-section">Contact us</NavLink>
               </nav>
               <div className="relative ml-10 mt-4">
                 <input
@@ -220,7 +261,7 @@ export default function Navbar() {
       >
         {/* Background with blur */}
         <div
-          className={`absolute inset-0  backdrop-blur-md transition-all duration-500 ${
+          className={`absolute inset-0 backdrop-blur-md transition-all duration-500 ${
             isMenuOpen ? "opacity-100" : "opacity-0"
           }`}
           onClick={() => setIsMenuOpen(false)}
@@ -250,10 +291,9 @@ export default function Navbar() {
           {/* Navigation Items */}
           <div className="p-6 space-y-2">
             {navItems.map((item, index) => (
-              <button
+              <div
                 key={item.href}
-                onClick={() => handleClick(item.href)}
-                className={`w-full group flex items-center justify-between p-4 rounded-xl text-left transition-all duration-300 hover:bg-gray-100 hover:shadow-md transform hover:scale-[1.02] ${
+                className={`transition-all duration-300 ${
                   isMenuOpen
                     ? "translate-x-0 opacity-100"
                     : "translate-x-8 opacity-0"
@@ -262,16 +302,12 @@ export default function Navbar() {
                   transitionDelay: isMenuOpen ? `${index * 100}ms` : "0ms",
                 }}
               >
-                <div>
-                  <div className="font-semibold text-gray-800 group-hover:text-gray-600 transition-colors duration-200">
-                    {item.label}
-                  </div>
-                  <div className="text-sm text-gray-500 mt-1">
-                    {item.description}
-                  </div>
-                </div>
-                <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-200" />
-              </button>
+                <MobileNavLink
+                  href={item.href}
+                  label={item.label}
+                  description={item.description}
+                />
+              </div>
             ))}
           </div>
 
