@@ -50,43 +50,86 @@ export default function Contact() {
 
   return (
     <div className="relative min-h-screen flex flex-col">
-      <div className="absolute bottom-50 left-1/2 transform -translate-x-1/2 z-40 w-full h-40 pointer-events-none mb-8">
-        <div
-          className="w-[550px] h-[550px] bg-no-repeat bg-contain bg-bottom mx-auto"
-          style={{
-            backgroundImage:
-              "url('https://res.cloudinary.com/df622sxkk/image/upload/v1747678428/Group_2_ikixqa.png')",
-          }}
-        ></div>
-        <footer className="w-full bg-gray-300 bg-opacity-60 backdrop-blur-md py-6">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="mb-4 md:mb-0">
-                <p className="text-sm text-gray-700">
+      {/* Footer Section - Mobile Responsive */}
+      <div className="absolute bottom-0 left-0 right-0 z-30 w-full pointer-events-none">
+        {/* Background Image - Responsive */}
+        <div className="w-full flex justify-center">
+          <div
+            className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] bg-no-repeat bg-contain bg-bottom"
+            style={{
+              backgroundImage:
+                "url('https://res.cloudinary.com/df622sxkk/image/upload/v1747678428/Group_2_ikixqa.png')",
+            }}
+          ></div>
+        </div>
+
+        {/* Footer */}
+        <footer className="w-full bg-gray-300 bg-opacity-60 backdrop-blur-md py-4 sm:py-6 pointer-events-auto z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:justify-between sm:items-center">
+              {/* Copyright */}
+              <div className="text-center sm:text-left">
+                <p className="text-xs sm:text-sm text-gray-700 font-medium">
                   © {currentYear} ThōhT Designs. All Rights Reserved.
                 </p>
               </div>
 
-              <div className="text-sm text-gray-600">
-                <p>Hyderabad, India</p>
+              {/* Location */}
+              <div className="text-center sm:text-right">
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Hyderabad, India
+                </p>
               </div>
             </div>
           </div>
         </footer>
       </div>
 
-      <div className={`${inter.className} relative z-10`}>
+      {/* Main Content */}
+      <div className={`${inter.className} relative z-10 flex-1`}>
         <Head>
           <title>Contact Us | ThōhT Designs</title>
           <meta name="description" content="Get in touch with ThōnT Designs" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <FullPageBackground />
+
+        {/* Navigation */}
         <Navbar />
-        <About />
-        {/* <ProjectSection /> */}
-        <WorkWithUs />
-        <ContactContent />
+
+        {/* Page Sections */}
+        <main className="w-full">
+          {/* Full Page Background */}
+          <section id="home" className="w-full">
+            <FullPageBackground />
+          </section>
+
+          {/* About Section */}
+          <section id="about-us" className="w-full">
+            <About />
+          </section>
+
+          {/* Projects Section - Commented out but kept for reference */}
+          {/* <section id="project" className="w-full">
+            <ProjectSection />
+          </section> */}
+
+          {/* Work With Us Section */}
+          <section id="work-with-us" className="w-full">
+            <WorkWithUs />
+          </section>
+
+          {/* Contact Section */}
+          <section
+            id="contact-section"
+            className="w-full pb-32 sm:pb-40 md:pb-48 lg:pb-56"
+          >
+            <ContactContent />
+          </section>
+        </main>
       </div>
     </div>
   );

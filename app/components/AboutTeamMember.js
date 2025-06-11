@@ -7,7 +7,7 @@ const TeamMemberCard = ({ teamMembers }) => {
       <img
         src="https://res.cloudinary.com/df622sxkk/image/upload/v1747686479/image_7_k4lygz.png"
         alt="Decorative T shape"
-        className="absolute -top-16 left-12 w-[34rem] h-[34rem]"
+        className="absolute -top-16 md:left-12 left-2 w-[34rem] h-[34rem]"
         onContextMenu={(e) => e.preventDefault()}
         draggable={false}
         style={{ userSelect: "none", pointerEvents: "none" }}
