@@ -142,7 +142,7 @@ export default function Navbar() {
     <>
       {/* Main Navbar */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-500 ${
           isTransparent
             ? "bg-transparent backdrop-blur-none border-none"
             : "bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200"

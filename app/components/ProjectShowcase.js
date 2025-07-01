@@ -99,7 +99,7 @@ export default function ProjectShowcase({
       </div>
 
       {/* Title and Location */}
-      <div className="px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 lg:pt-2 pb-4 sm:pb-5 lg:pb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 z-30">
+      <div className="px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 lg:pt-2 pb-4 sm:pb-5 lg:pb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 z-50">
         <h2 className="text-base sm:text-lg font-normal text-gray-900 uppercase tracking-wider">
           {title}
         </h2>
@@ -110,7 +110,7 @@ export default function ProjectShowcase({
 
       {/* Navigation Controls */}
       {images.length > 1 && (
-        <div className="flex justify-center items-center pb-4 sm:pb-5 lg:pb-6 gap-4 sm:gap-6 z-30">
+        <div className="flex justify-center items-center pb-4 sm:pb-5 lg:pb-6 gap-4 sm:gap-6 z-50">
           <button
             onClick={goToPrevious}
             className="rounded-full p-2 sm:p-3 lg:py-0 lg:px-1 text-black transition-all hover:scale-110 hover:bg-gray-100 cursor-pointer touch-manipulation"

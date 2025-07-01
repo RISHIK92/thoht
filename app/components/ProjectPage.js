@@ -62,7 +62,7 @@ export default function ProjectPage({
           description={description}
           title={title}
         />
-        <div className="mt-8 sm:mt-10 lg:mt-12 relative z-10">
+        <div className="mt-8 sm:mt-10 lg:mt-12 relative z-50">
           {/* Vertical Type Rectangle - Hidden on mobile, visible on desktop */}
           <div className="md:fixed sm:fixed lg:fixed hidden md:hidden sm:hidden left-6 top-1/2 transform -translate-y-1/2 bg-[#F2F2F2] text-black w-4 h-full lg:flex items-center justify-center z-10 border-black shadow-[4px_0_8px_-2px_rgba(0,0,0,0.1)]">
             <div className="transform -rotate-90 whitespace-nowrap">
