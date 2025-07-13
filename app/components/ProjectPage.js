@@ -63,7 +63,6 @@ export default function ProjectPage({
           title={title}
         />
         <div className="mt-8 sm:mt-10 lg:mt-12 relative z-50">
-          {/* Vertical Type Rectangle - Hidden on mobile, visible on desktop */}
           <div className="md:fixed sm:fixed lg:fixed hidden md:hidden sm:hidden left-6 top-1/2 transform -translate-y-1/2 bg-[#F2F2F2] text-black w-4 h-full lg:flex items-center justify-center z-10 border-black shadow-[4px_0_8px_-2px_rgba(0,0,0,0.1)]">
             <div className="transform -rotate-90 whitespace-nowrap">
               <span className="text-sm font-normal tracking-widest">
@@ -72,7 +71,6 @@ export default function ProjectPage({
             </div>
           </div>
 
-          {/* Mobile Type Badge - Visible only on mobile */}
           <div className="lg:hidden mb-4 flex justify-center">
             <div className="bg-[#F2F2F2] text-black px-4 py-2 rounded-full border shadow-sm">
               <span className="text-sm font-normal tracking-widest">

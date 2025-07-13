@@ -10,12 +10,17 @@ import About from "./components/AboutUs";
 import FullPageBackground from "./components/Home";
 import ProjectSection from "./components/Project";
 import WorkWithUs from "./components/WorkWithUs";
+import { initAnalytics } from "@/lib/firebase";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Contact() {
   const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    initAnalytics();
+  }, []);
 
   useEffect(() => {
     const handleHashChange = () => {
