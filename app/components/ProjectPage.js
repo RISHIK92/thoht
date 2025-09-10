@@ -55,7 +55,7 @@ export default function ProjectPage({
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-6xl mt-32 sm:mt-24 lg:mt-32 z-10 relative">
+      <div className="container mx-auto px-8 sm:px-16 lg:px-32 max-w-none mt-32 sm:mt-24 lg:mt-32 z-10 relative">
         <DayNightSlider
           dayImage={dayImage}
           nightImage={nightImage}
@@ -115,42 +115,38 @@ export default function ProjectPage({
 
                 {/* Desktop Layout - Full Width Single Column - No Grid */}
                 <div className="hidden lg:block w-full">
-                  <div className="px-8">
+                  <div className="flex flex-col gap-6 w-full">
                     {" "}
-                    {/* Added padding left and right */}
-                    <div className="flex flex-col gap-6 w-full">
-                      {" "}
-                      {/* Single column layout */}
-                      {/* All Images - Full Width, Stacked Vertically */}
-                      {images.thumbnails.slice(0, 7).map((thumbnail, index) => (
-                        <div
-                          key={index}
-                          className="relative w-full bg-gray-100 overflow-hidden cursor-pointer group transition-all duration-300 hover:shadow-lg"
-                          style={{ aspectRatio: "16/9" }}
-                          onClick={() => openModal(index)}
-                        >
-                          <img
-                            src={thumbnail.image}
-                            alt={thumbnail.title}
-                            fill="true"
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            onContextMenu={(e) => e.preventDefault()}
-                            draggable={false}
-                            style={{
-                              userSelect: "none",
-                              pointerEvents: "none",
-                            }}
-                          />
-                          <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
-                            <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <h3 className="text-sm font-light">
-                                {thumbnail.title}
-                              </h3>
-                            </div>
+                    {/* Single column layout */}
+                    {/* All Images - Full Width, Stacked Vertically */}
+                    {images.thumbnails.slice(0, 7).map((thumbnail, index) => (
+                      <div
+                        key={index}
+                        className="relative w-full bg-gray-100 overflow-hidden cursor-pointer group transition-all duration-300 hover:shadow-lg"
+                        style={{ aspectRatio: "16/9" }}
+                        onClick={() => openModal(index)}
+                      >
+                        <img
+                          src={thumbnail.image}
+                          alt={thumbnail.title}
+                          fill="true"
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          onContextMenu={(e) => e.preventDefault()}
+                          draggable={false}
+                          style={{
+                            userSelect: "none",
+                            pointerEvents: "none",
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
+                          <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 className="text-sm font-light">
+                              {thumbnail.title}
+                            </h3>
                           </div>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

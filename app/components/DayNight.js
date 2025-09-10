@@ -45,7 +45,7 @@ export default function DayNightSlider({
   }, [isDragging]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto my-20">
+    <div className="w-full my-20">
       <div className="relative" ref={containerRef}>
         {/* Slider */}
         <ReactCompareSlider
@@ -59,7 +59,7 @@ export default function DayNightSlider({
             borderRadius: "0px",
             overflow: "hidden",
             zIndex: 30,
-            pointerEvents: "none", // Prevent interference with custom handle
+            pointerEvents: "none",
           }}
           handle={<InvisibleHandle />}
           draggable={false}
