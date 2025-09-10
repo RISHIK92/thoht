@@ -45,7 +45,7 @@ export default function DayNightSlider({
   }, [isDragging]);
 
   return (
-    <div className="w-full my-20">
+    <div className="w-full max-w-6xl mx-auto my-20">
       <div className="relative" ref={containerRef}>
         {/* Slider */}
         <ReactCompareSlider
