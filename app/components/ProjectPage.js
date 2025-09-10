@@ -113,44 +113,21 @@ export default function ProjectPage({
                   ))}
                 </div>
 
-                {/* Desktop Layout - Multi Column */}
-                <div className="hidden lg:flex gap-4 flex-[3] w-full">
-                  {/* Left Column */}
-                  <div className="flex-[2.5] flex flex-col gap-4">
-                    {/* Big Image */}
-                    {images.thumbnails[0] && (
-                      <div
-                        className="relative w-full bg-gray-100 overflow-hidden cursor-pointer group transition-all duration-300 hover:shadow-lg"
-                        style={{ aspectRatio: "16/9" }}
-                        onClick={() => openModal(0)}
-                      >
-                        <img
-                          src={images.thumbnails[0].image}
-                          alt={images.thumbnails[0].title}
-                          fill="true"
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          onContextMenu={(e) => e.preventDefault()}
-                          draggable={false}
-                          style={{ userSelect: "none", pointerEvents: "none" }}
-                        />
-                        <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
-                          <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 className="text-sm font-light">
-                              {images.thumbnails[0].title}
-                            </h3>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* 2x2 Grid */}
-                    <div className="grid grid-cols-2 gap-4 z-10 relative">
-                      {images.thumbnails.slice(1, 5).map((thumbnail, index) => (
+                {/* Desktop Layout - Full Width Single Column - No Grid */}
+                <div className="hidden lg:block w-full">
+                  <div className="px-8">
+                    {" "}
+                    {/* Added padding left and right */}
+                    <div className="flex flex-col gap-6 w-full">
+                      {" "}
+                      {/* Single column layout */}
+                      {/* All Images - Full Width, Stacked Vertically */}
+                      {images.thumbnails.slice(0, 7).map((thumbnail, index) => (
                         <div
-                          key={index + 1}
+                          key={index}
                           className="relative w-full bg-gray-100 overflow-hidden cursor-pointer group transition-all duration-300 hover:shadow-lg"
                           style={{ aspectRatio: "16/9" }}
-                          onClick={() => openModal(index + 1)}
+                          onClick={() => openModal(index)}
                         >
                           <img
                             src={thumbnail.image}
@@ -164,7 +141,7 @@ export default function ProjectPage({
                               pointerEvents: "none",
                             }}
                           />
-                          <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
+                          <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                             <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                               <h3 className="text-sm font-light">
                                 {thumbnail.title}
@@ -174,35 +151,6 @@ export default function ProjectPage({
                         </div>
                       ))}
                     </div>
-                  </div>
-
-                  {/* Right Column */}
-                  <div className="flex-1 flex flex-col gap-4 z-10 relative">
-                    {images.thumbnails.slice(5, 7).map((thumbnail, index) => (
-                      <div
-                        key={index + 5}
-                        className="relative w-full bg-gray-100 overflow-hidden cursor-pointer group transition-all duration-300 hover:shadow-lg"
-                        style={{ aspectRatio: "16/9" }}
-                        onClick={() => openModal(index + 5)}
-                      >
-                        <img
-                          src={thumbnail.image}
-                          alt={thumbnail.title}
-                          fill="true"
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          onContextMenu={(e) => e.preventDefault()}
-                          draggable={false}
-                          style={{ userSelect: "none", pointerEvents: "none" }}
-                        />
-                        <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
-                          <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 className="text-sm font-light">
-                              {thumbnail.title}
-                            </h3>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
                   </div>
                 </div>
               </div>
