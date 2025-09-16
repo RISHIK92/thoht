@@ -54,7 +54,7 @@ export default function DayNightSlider({
           itemOne={<ReactCompareSliderImage src={dayImage} alt="Day" />}
           itemTwo={<ReactCompareSliderImage src={nightImage} alt="Night" />}
           style={{
-            height: "600px",
+            height: "650px",
             width: "100%",
             borderRadius: "0px",
             overflow: "hidden",
