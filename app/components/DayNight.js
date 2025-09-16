@@ -54,7 +54,7 @@ export default function DayNightSlider({
           itemOne={<ReactCompareSliderImage src={dayImage} alt="Day" />}
           itemTwo={<ReactCompareSliderImage src={nightImage} alt="Night" />}
           style={{
-            height: "550px",
+            height: "600px",
             width: "100%",
             borderRadius: "0px",
             overflow: "hidden",
@@ -64,8 +64,8 @@ export default function DayNightSlider({
           handle={<InvisibleHandle />}
           draggable={false}
         />
-
         {/* Top vertical line */}
+
         <div
           className="absolute top-0 left-0 right-0 h-6 pointer-events-none"
           style={{ transform: "translateY(-100%)" }}
